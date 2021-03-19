@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pizzeria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="376.718" Width="646.565">
+        Title="MainWindow" Height="504.718" Width="503.565">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -56,13 +56,26 @@
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Header="Wybierz spód" Grid.Row="0" Grid.Column="1">
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <CheckBox  x:Name="cb1" Content="standardowy" Height="20"/>
-                        <CheckBox  x:Name="cb2" Content="ultra cienki" Height="20"/>
-                        <CheckBox  x:Name="cb3" Content="gruby" Height="20"/>
-                        <CheckBox  x:Name="cb4" Content="masny" Height="20"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0">
+                            <CheckBox  x:Name="cb1" Content="standardowy" Height="20"/>
+                            <CheckBox  x:Name="cb2" Content="ultra cienki" Height="20"/>
+                            <CheckBox  x:Name="cb3" Content="gruby" Height="20"/>
+                            <CheckBox  x:Name="cb4" Content="masny" Height="20"/>
 
-                    </StackPanel>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1">
+                            <TextBox x:Name="tb1" Height="18" Width="100" Margin="2"/>
+                            <TextBox x:Name="tb2" Height="18" Width="100" Margin="2"/>
+                            <TextBox x:Name="tb3" Height="18" Width="100" Margin="2"/>
+                            <TextBox x:Name="tb4" Height="18" Width="100" Margin="2"/>
+
+                        </StackPanel>
+                    </Grid>
 
                 </GroupBox>
             </Grid>
@@ -73,9 +86,12 @@
                 <ListBox x:Name="lb1"/>
             </Grid>
             <Grid Grid.Row="4">
-                <Button Content="Ok" Height="25" Width="45" Margin="567,4,27,4"/>
-                <Button Content="Anuluj" Height="25" Width="92" Margin="453,4,94,4"/>
-                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Ok" Height="25" Width="90" Margin="10"/>
+                    <Button Content="Anuluj" Height="25" Width="90" Margin="10"/>
+                </StackPanel>
+
+
             </Grid>
         </Grid>
     </Grid>

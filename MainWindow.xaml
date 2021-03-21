@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pizzeria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="504.718" Width="503.565">
+        Title="MainWindow" Height="500" Width="500">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -28,10 +28,10 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="Dane zamawiającego:" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="Pizza:" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Height="20" VerticalAlignment="Center"/>
-                <Button Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Wyczyść" Width="75" FontSize ="15"/>
-                <Button Grid.Row="1" Grid.Column="2" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Wyczyść" Width="75" FontSize ="15"/>
-                <ComboBox Grid.Row="1" Grid.Column="1" Height="20"  VerticalAlignment="Center">
+                <TextBox x:Name="tb1a" Grid.Row="0" Grid.Column="1" Height="20" VerticalAlignment="Center" TextChanged="tb1a_TextChanged"/>
+                <Button x:Name="bt1" Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Wyczyść" Width="75" FontSize ="15" Click="bt1_Click"/>
+                <Button x:Name="bt2" Grid.Row="1" Grid.Column="2" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Wyczyść" Width="75" FontSize ="15" Click="bt2_Click"/>
+                <ComboBox x:Name="cb1" Grid.Row="1" Grid.Column="1" Height="20"  VerticalAlignment="Center" SelectionChanged="cb1_SelectionChanged">
                     <ComboBoxItem Content="pizza"/>
                     <ComboBoxItem Content="pizza"/>
                     <ComboBoxItem Content="pizza"/>
@@ -46,7 +46,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <GroupBox Header="Wybierz spód" Grid.Row="0" Grid.Column="0">
+                <GroupBox x:Name="gb1" Header="Wybierz spód" Grid.Row="0" Grid.Column="0">
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
                         <RadioButton  x:Name="rb1" Content="standardowy" Height="20"/>
                         <RadioButton  x:Name="rb2" Content="ultra cienki" Height="20"/>
@@ -55,17 +55,17 @@
 
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Header="Wybierz spód" Grid.Row="0" Grid.Column="1">
+                <GroupBox x:Name="gb2" Header="Wybierz spód" Grid.Row="0" Grid.Column="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0">
-                            <CheckBox  x:Name="cb1" Content="standardowy" Height="20"/>
-                            <CheckBox  x:Name="cb2" Content="ultra cienki" Height="20"/>
-                            <CheckBox  x:Name="cb3" Content="gruby" Height="20"/>
-                            <CheckBox  x:Name="cb4" Content="masny" Height="20"/>
+                            <CheckBox  x:Name="chb1" Content="standardowy" Height="20"/>
+                            <CheckBox  x:Name="chb2" Content="ultra cienki" Height="20"/>
+                            <CheckBox  x:Name="chb3" Content="gruby" Height="20"/>
+                            <CheckBox  x:Name="chb4" Content="masny" Height="20"/>
 
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1">
@@ -80,17 +80,17 @@
                 </GroupBox>
             </Grid>
             <Grid Grid.Row="2">
-                <Button Content="Dodaj do zamówienia" Height="25" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Button x:Name="bt3" Content="Dodaj do zamówienia" Height="25" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right" Click="bt3_Click"/>
             </Grid>
             <Grid Grid.Row="3">
-                <ListBox x:Name="lb1"/>
+                <ListBox x:Name="lb1" SelectedIndex="2" IsSynchronizedWithCurrentItem="False"/>
             </Grid>
             <Grid Grid.Row="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Ok" Height="25" Width="90" Margin="10"/>
-                    <Button Content="Anuluj" Height="25" Width="90" Margin="10"/>
+                    <Button x:Name="btAccept" Content="Ok" Height="25" Width="90" Click="btAccept_Click"/>
+                    <Button x:Name="btCancel" Content="Anuluj" Height="25" Width="90" Margin="10" Click="btCancel_Click"/>
                 </StackPanel>
-
+                
 
             </Grid>
         </Grid>
